@@ -9,3 +9,9 @@ If you don't want to create a lot of files to start a new project use this tool.
 # Usage
 
 `newpr -l <Programming language>`
+
+# Language support
+
+[x] JavaScript
+[] Node.js
+[] CLI JS
