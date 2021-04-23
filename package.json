@@ -1,5 +1,5 @@
 {
-  "name": "new-project-cli",
+  "name": "create-new-project-cli",
   "version": "1.0.0",
   "description": "CLI tool to make a new project",
   "main": "bin/index.js",
@@ -7,11 +7,24 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "newpr": "./bin/index.js"
+    "newpr": "bin/index.js"
   },
   "author": "comav",
   "license": "ISC",
   "dependencies": {
     "yargs": "^16.2.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/comav/new-project-cli.git"
+  },
+  "keywords": [
+    "cli",
+    "tool"
+  ],
+  "bugs": {
+    "url": "https://github.com/comav/new-project-cli/issues"
+  },
+  "homepage": "https://github.com/comav/new-project-cli#readme"
 }
