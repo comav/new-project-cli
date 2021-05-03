@@ -9,7 +9,9 @@ const readline = require('readline');
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
-})
+});
+
+let htmlDummy = '<html></html>';
 
 const options = yargs
     .usage("Usage -n <name>")
@@ -33,16 +35,21 @@ switch (options.language) {
 async function jsProject() {
     let stylesFolder = './styles';
 
-    await makeRepo();
-
-    fs.writeFile('index.html', 'utf-8', () => { console.log('Created index.html') });
-    fs.writeFile('index.js', 'utf-8', () => { console.log('Created index.js') });
+    fs.writeFile('index.html', htmlDummy, () => {
+        exec('git init') 
+        console.log('Created index.html')
+    });
+    fs.writeFile('index.js', '', () => { console.log('Created index.js') });
     fs.mkdir(stylesFolder, () => { console.log('Created styles folder') });
-    fs.writeFile(`${stylesFolder}/styles.scss,`, 'utf-8', () => { console.log('Created styles.scss') });
-    fs.writeFile(`${stylesFolder}/styles.css,`, 'utf-8', () => { console.log('Created styles.css') });
-    exec('git add .');
+    fs.writeFile(`${stylesFolder}/styles.scss`, '', () => { console.log('Created styles.scss') });
+    fs.writeFile(`${stylesFolder}/styles.css`, '', () => { 
+        console.log('Created styles.css');
+        exec('git add .');
 
-    console.log("You're ready to code!");
+        console.log("You're ready to code!");
+
+        process.exit();
+    });
 }
 
 async function nodeProject() {
